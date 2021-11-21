@@ -40,4 +40,8 @@ function reverseString3(strArray, start = 0, end = strArray.length - 1) {
 
 const s2 = ["i", "s", "r", "a", "e", "l"];
 
-console.log("from reverse by recursion: ", reverseString3(s2));
+console.log("from reverse by recursion: ", reverseString3(s2), s2);
+
+function reverseString4(str) {
+  //one-liner using substrings, the reversed string is built while the recursion stack is slowly returning
+}
