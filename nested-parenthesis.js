@@ -12,6 +12,7 @@ function solution(S) {
     if (char === "{" || char === "[" || char === "(") {
       bracketStack.push(char);
     } else {
+      // Closing bracket
       let lastChar = bracketStack.pop();
       switch (char) {
         case ")":
