@@ -24,3 +24,15 @@ console.log(petRegex.test(petString));
 let myString = "freeCodeCamp";
 let fccRegex = /freecodecamp/i; 
 console.log(fccRegex.test(myString)); //true
+
+// You can also extract the actual matches you found with the .match() method.
+
+let extractStr = "Extract the word 'coding' from this string.";
+let codingRegex = /coding/; 
+console.log(extractStr.match(codingRegex)); 
+
+// To search or extract a pattern more than once, you can use the g flag.
+
+let twinkleStar = "Twinkle, twinkle, little star";
+let starRegex = /twinkle/ig; 
+console.log(twinkleStar.match(starRegex)); 
