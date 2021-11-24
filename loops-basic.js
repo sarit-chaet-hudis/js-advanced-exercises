@@ -34,7 +34,7 @@ const arr = [-3, -2, -1, 0, 1, 2, 3]
 // get all positive numbers and multiply by 2
 let output = arr.filter((num) => {
     return num > 0
-}).map((num) => {
+}).map((num) => {   // i can call "num" any other name now, doesn't matter
     return num * 2
 })
 

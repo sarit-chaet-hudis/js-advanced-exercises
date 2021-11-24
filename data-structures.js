@@ -46,7 +46,6 @@ const stackObj = {
   isEmpty: function () {
     return this.stack.length === 0;
   },
-
 };
 
 stackObj.push("purple");
@@ -59,6 +58,24 @@ console.log("stack after popping: ", stackObj.stack);
 class LinkedList {
   constructor(head = null) {
     this.head = head;
+    this.addToEnd = function (newNode) {
+      if (!head) return;
+      // i think it isnt necessary
+      let currentNode = head;
+      while (currentNode.next) {
+        currentNode = currentNode.next;
+        //walking on all the nodes untile there's no "next" = last node
+      }
+      currentNode.next = newNode;
+    };
+    this.addToStart = function (newNode) {
+      let oldHead = this.head;
+      this.head = newNode;
+      // why in emanuel's code there's no "this.head = " ? 
+      // he doesnt use a class for the entire linked list, 
+      // so he just has a regular node named "head".
+      newNode.next = oldHead;
+    };
   }
 }
 
@@ -77,7 +94,7 @@ let node3 = new ListNode("three");
 node2.next = node3;
 // direct access possible only because node was created manually.
 
-// if the linked list items were created with a method, reaching the Nth node was possible only by travelling 
+// if the linked list items were created with a method, reaching the Nth node was possible only by travelling
 // across all nodes until you reach it.
 
 // Lets create a linked list with node1 as its head!

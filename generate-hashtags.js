@@ -4,13 +4,11 @@
 // If the input or the result is an empty string it must return false.
 
 function generateHashtag(str) {
-  if (str === "") return false;
+  if (str === "" || str.length > 140) return false;
 
   let words = str.match(/\b\w+/g);
 
   if (!words) return false;
-
-  if (words.join("").length > 139) return false;
 
   const result = [];
   for (let word of words) {
@@ -27,3 +25,15 @@ const s4 = "   "; // => false
 const s5 = "code" + " ".repeat(140) + "wars";
 
 console.log(generateHashtag(s4));
+
+// Alternate solution:
+
+function generateHashtag(str) {
+  return str.length > 140 || str === ""
+    ? false
+    : "#" + str.split(" ").map(capitalize).join("");
+}
+
+function capitalize(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
